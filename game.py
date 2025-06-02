@@ -41,7 +41,7 @@ def play_game(player_1, player_2):
 
     while not find_winner(wins, wins.keys()):
         roll1 = get_roll(player_1, roll_names)
-        roll2 = random.choice(roll_names)
+        roll2 = get_computer_roll(roll_names)
 
         if not roll1:
             print("Try again!")
@@ -65,6 +65,11 @@ def play_game(player_1, player_2):
 
     overall_winner = find_winner(wins, wins.keys())
     print(f"{overall_winner} wins the game!")
+
+
+def get_computer_roll(roll_names):
+    roll2 = random.choice(roll_names)
+    return roll2
 
 
 def find_winner(wins, names):
